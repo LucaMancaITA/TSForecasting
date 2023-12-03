@@ -1,0 +1,10 @@
+{
+    "enc_in": 1,
+    "dec_in": 1,
+    "c_out": 1,
+    "d_model": 128,
+    "n_heads": 2,
+    "e_layers": 1,
+    "d_layers": 1,
+    "d_ff": 128
+}
