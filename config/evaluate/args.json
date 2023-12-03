@@ -1,0 +1,27 @@
+{
+    "data": {
+        "root_path": "./data",
+        "data_path": "ETTh1.csv",
+        "input_len": 96,
+        "label_len": 24,
+        "pred_len": 24,
+        "features": "S",
+        "target": "OT",
+        "scale": true,
+        "timeenc": 0,
+        "freq": "h"
+    },
+    "evaluate": {
+        "batch_size": 24,
+        "epochs": false,
+        "learning_rate": false,
+        "use_amp": false,
+        "checkpoints": "./checkpoints/",
+        "architecture": "informer",
+        "model_name": "informer"
+    },
+    "outputs": {
+        "visualize": true,
+        "n_figures": 10
+    }
+}
