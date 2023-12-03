@@ -47,7 +47,7 @@ model_path = os.path.join(
 model.model.load_state_dict(torch.load(model_path))
 
 # Test dataset
-_, loader = model.get_dataset(flag="test")
+dataset, loader = model.get_dataset(flag="train")
 
 # Evaluation on the test set
 inputs = []
@@ -64,9 +64,9 @@ for i, (batch_x, batch_y, batch_x_mark, batch_y_mark) in tqdm(enumerate(loader))
     trues.append(true[0, :, :].detach().numpy())
     preds.append(pred[0, :, :].detach().numpy())
 
-pred_arr = np.array(preds)
+pred_arr = dataset.inverse_transform(np.array(preds))
 pred_arr = np.reshape(pred_arr, (-1, 1))
-true_arr = np.array(trues)
+true_arr = dataset.inverse_transform(np.array(trues))
 true_arr = np.reshape(true_arr, (-1, 1))
 
 # Save the test inference

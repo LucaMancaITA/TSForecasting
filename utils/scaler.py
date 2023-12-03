@@ -14,7 +14,7 @@ class StandardScaler():
         """Fit with the training data.
 
         Args:
-            data (list): list of data values.
+            data (np.array): np.array of data values.
         """
         self.mean = data.mean(0)
         self.std = data.std(0)
@@ -23,10 +23,10 @@ class StandardScaler():
         """Apply data standardization.
 
         Args:
-            data (list): input data.
+            data (np.array): input data.
 
         Returns:
-            list: standardized data.
+            np.array: standardized data.
         """
         mean = torch.from_numpy(self.mean).type_as(data).to(data.device) if torch.is_tensor(data) else self.mean
         std = torch.from_numpy(self.std).type_as(data).to(data.device) if torch.is_tensor(data) else self.std
@@ -36,10 +36,10 @@ class StandardScaler():
         """De-standardize the input data.
 
         Args:
-            data (list): standardized data.
+            data (np.array): standardized data.
 
         Returns:
-            list: de-standardized data.
+            np.array: de-standardized data.
         """
         mean = torch.from_numpy(self.mean).type_as(data).to(data.device) if torch.is_tensor(data) else self.mean
         std = torch.from_numpy(self.std).type_as(data).to(data.device) if torch.is_tensor(data) else self.std
