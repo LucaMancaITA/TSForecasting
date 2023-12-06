@@ -86,5 +86,6 @@ plt.figure(figsize=(25,5))
 plt.plot(pred_arr, label="pred")
 plt.plot(true_arr, label="true")
 plt.legend()
-plt.savefig(os.path.join(output_path, "test_inference.png"))
+plt.savefig(os.path.join(
+    output_path, "test_inference.png"), bbox_inches='tight')
 plt.close()
