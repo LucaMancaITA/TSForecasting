@@ -28,3 +28,25 @@ A quick training iteration has been done on the [ETTh](https://paperswithcode.co
 | Autoformer    | $\approx$ 260000   | 0.268 | 0.128 | 0.358 |
 
 *Note: models architecture are intentionally kept small to allow a faster training, even without a GPU.*
+
+Below, the plots of the model inference on the test set:
+
+**LSTM**
+
+<p align="center">
+<img width="900" alt="lstm_test" src="https://github.com/LucaMancaITA/TSForecasting/assets/79864480/6942de8e-e0d7-4c78-8492-f5c9ba0683f9">
+</p>
+
+**Informer**
+
+<p align="center">
+<img width="900" alt="lstm_test" src="https://github.com/LucaMancaITA/TSForecasting/assets/79864480/7911af19-a657-494c-bde6-0c8307ab501d">
+</p>
+
+**Autoformer**
+
+<p align="center">
+<img width="900" alt="lstm_test" src="https://github.com/LucaMancaITA/TSForecasting/assets/79864480/aacf5efe-b257-4f68-97ec-0b9a8f3d2cda">
+</p>
+
+
