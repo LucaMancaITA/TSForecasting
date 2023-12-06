@@ -7,10 +7,11 @@ import torch
 
 from utils.classes.data_args import DataArgs
 from utils.classes.train_eval_args import TrainEvalArgs
-from utils.classes.model_args import LstmArgs, InformerArgs
+from utils.classes.model_args import LstmArgs, InformerArgs, AutoformerArgs
 from utils.evaluate_utils import evaluate_results
 from modelling.lstm_model import LstmModel
 from modelling.informer_model import InformerModel
+from modelling.autoformer_model import AutoformerModel
 
 
 # Read config files
@@ -38,6 +39,14 @@ elif eval_args.architecture == "informer":
     model_args = InformerArgs(**net_args)
 
     model = InformerModel(data_args, eval_args, model_args)
+
+elif eval_args.architecture == "autoformer":
+    net_path = "./config/models/autoformer.json"
+    with open(net_path, "r", encoding="utf-8") as file:
+        net_args = json.load(file)
+    model_args = AutoformerArgs(**net_args)
+
+    model = AutoformerModel(data_args, eval_args, model_args)
 
 # Load checkpoint
 model_path = os.path.join(

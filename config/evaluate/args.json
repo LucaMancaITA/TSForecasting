@@ -17,8 +17,8 @@
         "learning_rate": false,
         "use_amp": false,
         "checkpoints": "./checkpoints/",
-        "architecture": "informer",
-        "model_name": "informer"
+        "architecture": "autoformer",
+        "model_name": "autoformer"
     },
     "outputs": {
         "visualize": true,
